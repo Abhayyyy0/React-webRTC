@@ -1,0 +1,116 @@
+/* Vibrant Theme Colors */
+:root {
+  --primary: #7f5af0;
+  --secondary: #2cb67d;
+  --accent: #f15bb5;
+  --background: #16161a;
+  --surface: #242629;
+  --text: #fffffe;
+  --muted: #94a1b2;
+  --danger: #ff3864;
+  --success: #2cb67d;
+  --warning: #ffd803;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--text);
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  margin: 0;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: linear-gradient(270deg, var(--primary), var(--accent), var(--secondary), var(--primary));
+  background-size: 600% 600%;
+  animation: gradientMove 16s ease-in-out infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.card {
+  background: rgba(36, 38, 41, 0.92);
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px rgba(127, 90, 240, 0.15);
+  padding: 2rem;
+  margin: 1rem 0;
+  transition: box-shadow 0.3s;
+}
+.card:hover {
+  box-shadow: 0 8px 32px rgba(127, 90, 240, 0.25);
+}
+
+.btn {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  color: var(--text);
+  border: none;
+  border-radius: 2rem;
+  padding: 0.7rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(127, 90, 240, 0.15);
+  transition: background 0.3s, transform 0.2s;
+}
+.btn:hover {
+  background: linear-gradient(90deg, var(--accent), var(--primary));
+  transform: translateY(-2px) scale(1.04);
+}
+
+.input {
+  background: var(--surface);
+  color: var(--text);
+  border: 2px solid var(--primary);
+  border-radius: 1rem;
+  padding: 0.6rem 1.2rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  transition: border 0.2s;
+}
+.input:focus {
+  border: 2px solid var(--accent);
+  outline: none;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  box-shadow: 0 2px 8px rgba(44, 182, 125, 0.15);
+}
+
+.banner {
+  background: linear-gradient(90deg, var(--accent), var(--primary));
+  color: var(--text);
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(241, 91, 181, 0.15);
+  text-align: center;
+  animation: fadeIn 0.7s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+} 

@@ -33,27 +33,32 @@ const LobbyScreen = () => {
   }, [socket, handleJoinRoom]);
 
   return (
-    <div>
-      <h1>Lobby</h1>
-      <form onSubmit={handleSubmitForm}>
-        <label htmlFor="email">Email ID</label>
-        <input
-          type="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <br />
-        <label htmlFor="room">Room Number</label>
-        <input
-          type="text"
-          id="room"
-          value={room}
-          onChange={(e) => setRoom(e.target.value)}
-        />
-        <br />
-        <button>Join</button>
-      </form>
+    <div className="card" style={{ maxWidth: 400, margin: '2rem auto', textAlign: 'center' }}>
+      <div className="avatar" style={{ margin: '0 auto 1rem auto' }}>{email ? email[0].toUpperCase() : '?'}</div>
+      <h2 style={{ color: 'var(--primary)' }}>Join a Room</h2>
+      <input
+        className="input"
+        type="email"
+        placeholder="Your Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <input
+        className="input"
+        type="text"
+        placeholder="Room ID"
+        value={room}
+        onChange={(e) => setRoom(e.target.value)}
+      />
+      <button
+        className="btn"
+        onClick={() => {
+          socket.emit("room:join", { email, room });
+        }}
+        style={{ width: '100%' }}
+      >
+        Join
+      </button>
     </div>
   );
 };

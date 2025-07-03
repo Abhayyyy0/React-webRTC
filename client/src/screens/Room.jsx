@@ -8,10 +8,14 @@ const RoomPage = () => {
   const [remoteSocketId, setRemoteSocketId] = useState(null);
   const [myStream, setMyStream] = useState();
   const [remoteStream, setRemoteStream] = useState();
+  const [email, setEmail] = useState(null);
+  const [roomId, setRoomId] = useState(null);
 
   const handleUserJoined = useCallback(({ email, id }) => {
     console.log(`Email ${email} joined room`);
     setRemoteSocketId(id);
+    setEmail(email);
+    setRoomId(id);
   }, []);
 
   const handleCallUser = useCallback(async () => {
@@ -109,10 +113,15 @@ const RoomPage = () => {
     handleNegoNeedFinal,
   ]);
 
+  const handleLeaveRoom = useCallback(() => {
+    // Implement the logic to leave the room
+    console.log("Leaving room");
+  }, []);
+
   return (
-    <div>
-      <h1>Room Page</h1>
-      <h4>{remoteSocketId ? "Connected" : "No one in room"}</h4>
+    <div className="card" style={{ maxWidth: 600, margin: '2rem auto', textAlign: 'center' }}>
+      <div className="avatar" style={{ margin: '0 auto 1rem auto' }}>{email ? email[0].toUpperCase() : '?'}</div>
+      <div className="banner">You are in room: <b>{roomId}</b></div>
       {myStream && <button onClick={sendStreams}>Send Stream</button>}
       {remoteSocketId && <button onClick={handleCallUser}>CALL</button>}
       {myStream && (
@@ -139,6 +148,9 @@ const RoomPage = () => {
           />
         </>
       )}
+      <button className="btn" onClick={handleLeaveRoom} style={{ marginTop: '2rem' }}>
+        Leave Room
+      </button>
     </div>
   );
 };
