@@ -1,4 +1,4 @@
-# React WebRTC Video Chat
+# VibeCall - Video Chat
 
 A vibrant, modern, and fully functional video chat application built with React and Socket.io.  
 This project allows users to join rooms and start peer-to-peer video calls with a beautiful, animated UI.
