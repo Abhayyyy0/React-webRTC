@@ -1,11 +1,11 @@
 # React WebRTC Video Chat
 
-A vibrant, modern, and fully functional video chat application built with React, WebRTC, and Socket.io.  
+A vibrant, modern, and fully functional video chat application built with React and Socket.io.  
 This project allows users to join rooms and start peer-to-peer video calls with a beautiful, animated UI.
 
 ## ✨ Features
 
-- **Real-time Video Chat:** Peer-to-peer video calls using WebRTC.
+- **Real-time Video Chat:** Peer-to-peer video calls using Socket.io.
 - **Room System:** Users can join rooms by ID and connect with others.
 - **Socket.io Signaling:** Fast, reliable signaling server for call setup.
 - **Modern, Colorful UI:** Custom CSS with animated backgrounds, gradients, and responsive design.
@@ -24,7 +24,7 @@ This project allows users to join rooms and start peer-to-peer video calls with 
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/your-username/your-repo.git
-   cd React-webRTC
+   cd VibeCall
    ```
 
 2. **Install dependencies for both client and server:**
@@ -56,7 +56,7 @@ This project allows users to join rooms and start peer-to-peer video calls with 
 ## 🛠️ Project Structure
 
 ```
-React-webRTC/
+VibeCall/
   client/    # React frontend (src/, public/, theme.css, etc.)
   server/    # Node.js Socket.io signaling server
 ```
@@ -79,9 +79,7 @@ cd client
 npm run build
 ```
 
-## 🤝 Contributing
 
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
 ## 📄 License
 
